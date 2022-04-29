@@ -1,9 +1,30 @@
+@font-face {
+    font-family: 'tapestryregular';
+    src: url('webfontkit-20220428-194437/tapestry-regular-webfont.woff2') format('woff2'),
+         url('webfontkit-20220428-194437/tapestry-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'square_pegregular';
+    src: url('webfontkit-20220428-194437/squarepeg-regular-webfont.woff2') format('woff2'),
+         url('webfontkit-20220428-194437/squarepeg-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --color-background-btn: rgb(76, 76, 248);
+}
 
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
     border: 2px solid green;
     padding: 20px;
+}
+.header * {
+font-family: 'square_pegregular', sans-serif;
+font-size: 1.5rem;
 }
 .header {
     grid-column: 2/3;
@@ -19,6 +40,13 @@
     grid-template-columns: 1fr 10fr;
     align-items: center;
 }
+button {
+    background-color: var(--color-background-btn);
+    color: white;
+    border-radius: 30% / 100%;
+    padding: 5px 20px;
+    border: none;
+}
 .first input[type="text"] {
     border-radius: 5% / 100%;
 }
@@ -31,7 +59,7 @@ img[src="vector-head-fat-cat-circle-260nw-1506148802.webp"] {
 .header div:nth-child(3) {
     grid-area: 2/2/3/3;
     align-self: end;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     padding: 5px;
 }
 .header div:nth-child(4) {
@@ -61,15 +89,27 @@ span img[src="vector-head-fat-cat-circle-260nw-1506148802.webp"] {
 }
 .sidebar {
     grid-area: 1/1/5/2;
+    background-color: var(--color-background-btn);
     display: grid;
     grid-template-rows: 2fr repeat(5, 1fr) 2fr repeat(3, 1fr) 10fr;
     border: 2px solid red;
+}
+.sidebar * {
+    font-family: 'tapestryregular', sans-serif;
+}
+.sidebar div:first-child {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    font-size: 1.5rem;
 }
 .content {
     grid-area: 2/2/5/3;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 40px 2fr 40px 2fr;
+    padding-left: 20px;
     
 }
 .article {
@@ -81,4 +121,16 @@ span img[src="vector-head-fat-cat-circle-260nw-1506148802.webp"] {
 }
 .card {
     border: 1px solid black;
+}
+.article-side {
+    padding-left: 20px;
+}
+.Announcements {
+    grid-area: 1/2/2/3;
+}
+.article-side div:nth-child(2) {
+    grid-area: 2/2/3/3;
+}
+.trending {
+    grid-area: 3/2/4/3;
 }
